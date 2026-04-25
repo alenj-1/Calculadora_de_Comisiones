@@ -45,20 +45,3 @@ Comisión final USD = Comisión nativa × Tasa de cambio a USD
 2. Abrir la carpeta del proyecto en Visual Studio Code.
 3. Abrir el archivo `index.html`.
 4. Usar Live Server o abrir el archivo directamente en el navegador.
-
-## Estructura del proyecto
-
-```text
-calculadora_de_comisiones/
-│
-├── css/
-│   └── styles.css
-├── js/
-│   └── app.js
-├── index.html
-└── README.md
-```
-
-## Autor
-
-Proyecto desarrollado como parte del parcial final de Programación II - Calculadora de Comisiones de Ventas

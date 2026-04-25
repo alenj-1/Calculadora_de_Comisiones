@@ -49,7 +49,7 @@ Comisión final USD = Comisión nativa × Tasa de cambio a USD
 ## Estructura del proyecto
 
 ```text
-calculadora-comisiones-ventas-6-paises/
+calculadora_de_comisiones/
 │
 ├── css/
 │   └── styles.css

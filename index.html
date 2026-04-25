@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Comisiones de Ventas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main class="contenedor">
+        <section class="hero tarjeta">
+            <h1>Calculadora de Comisiones de Ventas</h1>
+            <p class="descripcion-principal">
+                Calcula tu comisión mensual según el país donde operas y tus ventas totales
+            </p>
+        </section>
+
+        <section class="panel-principal tarjeta">
+            <form id="formComision">
+                <div class="bloque-formulario">
+                    <p class="paso">Selecciona tu país</p>
+                    <input type="hidden" id="pais" value="">
+                    <div id="listaPaises" class="grid-paises"></div>
+                </div>
+
+                <div class="bloque-formulario">
+                    <p class="paso">Ingresa tus ventas</p>
+                    <div class="grid-campos">
+                        <div class="grupo-campo">
+                            <label for="ventas">Ventas totales</label>
+                            <div class="campo-con-icono">
+                                <span id="simboloVentas">$</span>
+                                <input id="ventas" type="number" min="0" step="0.01" placeholder="0.00" required>
+                            </div>
+                        </div>
+
+                        <div class="grupo-campo">
+                            <label for="descuentos">Descuentos</label>
+                            <div class="campo-con-icono">
+                                <span id="simboloDescuentos">$</span>
+                                <input id="descuentos" type="number" min="0" step="0.01" placeholder="0.00" required>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="mensajeError" class="mensaje-error"></div>
+
+                <div class="acciones">
+                    <button type="submit" class="boton-principal">Calcular comisión</button>
+                    <button type="button" id="btnLimpiar" class="boton-secundario">Limpiar</button>
+                </div>
+            </form>
+
+            <section id="resultadoSeccion" class="resultado-panel oculto">
+                <p class="paso">Resultado del cálculo</p>
+
+                <div class="detalle-resultado">
+                    <div class="fila-resultado">
+                        <span>Ventas totales</span>
+                        <strong id="resVentasTotales"></strong>
+                    </div>
+                    <div class="fila-resultado">
+                        <span>Descuentos</span>
+                        <strong id="resDescuentos"></strong>
+                    </div>
+                    <div class="fila-resultado">
+                        <span>Ventas netas</span>
+                        <strong id="resVentasNetas"></strong>
+                    </div>
+                    <div class="fila-resultado">
+                        <span>País / Tasa</span>
+                        <strong id="resPais"></strong>
+                    </div>
+                    <div class="fila-resultado">
+                        <span>Comisión en moneda nativa</span>
+                        <strong id="resComisionNativa"></strong>
+                    </div>
+                    <div class="fila-resultado">
+                        <span>Tasa de cambio usada</span>
+                        <strong id="resTasaCambio"></strong>
+                    </div>
+                </div>
+
+                <div class="caja-total">
+                    <span>Comisión final</span>
+                    <strong id="resComision"></strong>
+                </div>
+
+                <div class="formula-box">
+                    <p class="formula-titulo">Fórmula aplicada:</p>
+                    <p id="resFormulaPaso1"></p>
+                    <p id="resFormulaPaso2"></p>
+                    <p id="resFormulaPaso3"></p>
+                </div>
+            </section>
+        </section>
+
+        <section class="tarjeta reglas-card">
+            <h2>Reglas de comisión</h2>
+            <p class="texto-secundario">
+                La empresa aplica una tasa distinta según el país del vendedor.
+            </p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>País</th>
+                        <th>Moneda</th>
+                        <th>Regla aplicada</th>
+                        <th>Porcentaje</th>
+                    </tr>
+                </thead>
+                <tbody id="tablaReglas"></tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
